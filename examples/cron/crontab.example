@@ -1,0 +1,7 @@
+# Twice-daily scribe lint — Linux/cron equivalent of the launchd plist.
+# Install with `crontab -e` and paste the next line. Adjust paths.
+
+0 9,21 * * * /home/YOU/dev/scribe/examples/cron/scribe-lint.sh
+
+# Override the vault if it lives elsewhere:
+# 0 9,21 * * * SCRIBE_VAULT=$HOME/notes/wiki /home/YOU/dev/scribe/examples/cron/scribe-lint.sh

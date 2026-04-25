@@ -2,6 +2,18 @@
 
 All notable changes to scribe.
 
+## [0.1.2] — 2026-04-25
+
+### Added
+
+- `examples/launchd/` — ready-to-install macOS launchd job for twice-daily `scribe-lint` (09:00 + 21:00). Includes `install.sh`, the wrapper script, and the templated plist. One-liner install: `cd examples/launchd && ./install.sh`.
+- `examples/cron/` — Linux/cron equivalent with `crontab.example`.
+- HOOKS.md now points at the example files and explains the slash-command-vs-inline-prompt trade-off in headless mode.
+
+### Fixed
+
+- The wrapper scripts use an inline natural-language prompt instead of `claude -p "/scribe-lint"`. Slash commands aren't reliably recognised in headless `-p` mode ("Unknown command: /scribe-lint"); the inline prompt mirrors the skill's seven checks and works whether or not the plugin is currently activated.
+
 ## [0.1.1] — 2026-04-25
 
 ### Added

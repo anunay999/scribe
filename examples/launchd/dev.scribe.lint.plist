@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>dev.scribe.lint</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- After running `make install` in this directory, the wrapper lands at
+             ~/.local/bin/scribe-lint.sh. If you placed it elsewhere, edit this. -->
+        <string>__HOME__/.local/bin/scribe-lint.sh</string>
+    </array>
+
+    <!--
+        Twice-daily fire times: 09:00 and 21:00 local. If the Mac is asleep at a
+        trigger time, launchd fires the job on next wake — no missed runs.
+        Edit the Hour/Minute pairs to change cadence.
+    -->
+    <key>StartCalendarInterval</key>
+    <array>
+        <dict>
+            <key>Hour</key>
+            <integer>9</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+        <dict>
+            <key>Hour</key>
+            <integer>21</integer>
+            <key>Minute</key>
+            <integer>0</integer>
+        </dict>
+    </array>
+
+    <key>AbandonProcessGroup</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>__HOME__/Library/Logs/scribe/launchd.out</string>
+    <key>StandardErrorPath</key>
+    <string>__HOME__/Library/Logs/scribe/launchd.err</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <!-- Default vault. Override here if your vault is elsewhere. -->
+        <key>SCRIBE_VAULT</key>
+        <string>__HOME__/Documents/obsidian/claude</string>
+        <key>HOME</key>
+        <string>__HOME__</string>
+    </dict>
+</dict>
+</plist>
