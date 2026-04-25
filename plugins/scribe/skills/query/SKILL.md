@@ -1,9 +1,9 @@
 ---
-name: wiki-query
+name: query
 description: Use when the user asks a question that should be answered from the wiki rather than re-derived. Reads index.md first, drills into relevant pages, synthesizes an answer with [[wikilink]] citations, and files non-trivial answers back into the wiki as new pages so exploration compounds.
 ---
 
-# wiki-query
+# query
 
 > Good answers don't disappear into chat history — they become wiki pages.
 
@@ -16,7 +16,7 @@ description: Use when the user asks a question that should be answered from the 
 When **not** to use:
 
 - The question is fully answered by reading code/files in the user's working directory — use direct tools.
-- The question is a fresh research topic with no existing coverage in the wiki — use general web/search and *then* offer `/wiki-ingest` for the result.
+- The question is a fresh research topic with no existing coverage in the wiki — use general web/search and *then* offer `/scribe-ingest` for the result.
 
 ## Process
 
@@ -39,7 +39,7 @@ Write the answer in the chat with:
 - Clear lead sentence answering the question.
 - Citations as `[[wikilinks]]` to the pages used. *Every non-trivial claim* gets a citation.
 - If the wiki has gaps for the question, say so explicitly and offer to web-search → ingest.
-- If pages contradict, surface the contradiction with both citations. Recommend a `/wiki-lint` follow-up.
+- If pages contradict, surface the contradiction with both citations. Recommend a `/scribe-lint` follow-up.
 
 ### Step 4 — file the answer back (when the answer is non-trivial)
 
@@ -93,5 +93,5 @@ Claude:
 ## Anti-patterns
 
 - **Don't** quote the wiki verbatim if the user didn't ask for a copy. Synthesize.
-- **Don't** invent links. If a page would be useful but doesn't exist, name it as a gap and offer to create it via `/wiki-ingest` or directly.
+- **Don't** invent links. If a page would be useful but doesn't exist, name it as a gap and offer to create it via `/scribe-ingest` or directly.
 - **Don't** file every answer as a new page. Trivial lookups stay in chat.

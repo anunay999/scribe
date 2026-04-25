@@ -1,11 +1,11 @@
 ---
-name: wiki-update
+name: update
 description: Use when a fact has changed and a specific wiki page (or set of pages) needs editing. Edits the page in place, propagates the change to linked pages that reference the same fact, appends a History entry, and logs the update. Avoids the wholesale "ingest" path when no new source is involved.
 ---
 
-# wiki-update
+# update
 
-> Use this when the change is *known* and *small*. For larger changes driven by a new source, use `/wiki-ingest`.
+> Use this when the change is *known* and *small*. For larger changes driven by a new source, use `/scribe-ingest`.
 
 ## When to use
 
@@ -16,9 +16,9 @@ description: Use when a fact has changed and a specific wiki page (or set of pag
 
 When **not** to use:
 
-- New source dropped → `/wiki-ingest`.
-- Question asked → `/wiki-query`.
-- Health check → `/wiki-lint`.
+- New source dropped → `/scribe-ingest`.
+- Question asked → `/scribe-query`.
+- Health check → `/scribe-lint`.
 
 ## Process
 

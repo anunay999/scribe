@@ -1,9 +1,9 @@
 ---
-name: wiki-lint
+name: lint
 description: Use when the user asks to health-check the wiki, or after a stretch of ingests. Finds orphan pages, contradictions, stale claims, undocumented concepts mentioned across multiple pages, missing cross-references, and `#active` projects with no recent activity. Reports actionable findings; does not auto-fix without confirmation.
 ---
 
-# wiki-lint
+# lint
 
 > Lint surfaces problems. The user decides what to fix.
 

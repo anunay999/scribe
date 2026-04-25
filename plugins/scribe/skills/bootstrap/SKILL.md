@@ -1,9 +1,9 @@
 ---
-name: wiki-bootstrap
+name: bootstrap
 description: Use when the user wants to set up a new LLM-maintained knowledge wiki. Creates the vault directory under ~/Documents/obsidian/<name>/, writes WIKI.md (schema), index.md (catalog), log.md (event log), and seeds folders. Adds a pointer to the wiki from Claude's auto-memory so future sessions discover it.
 ---
 
-# wiki-bootstrap
+# bootstrap
 
 > **Run this once per vault.** Subsequent sessions read `WIKI.md` and operate from there.
 
@@ -127,7 +127,7 @@ Sparingly. Cross-cutting only: `#active`, `#stale`, `#decision`, `#bug`, `#patte
 
 ### Ingest
 
-User drops a source → run `/wiki-ingest`:
+User drops a source → run `/scribe-ingest`:
 
 1. Save raw to `sources/<slug>.md` with `type: source` frontmatter.
 2. Read once, summarize at top of the source page.
@@ -137,7 +137,7 @@ User drops a source → run `/wiki-ingest`:
 
 ### Query
 
-User asks something → run `/wiki-query`:
+User asks something → run `/scribe-query`:
 
 1. Read [[index]] first.
 2. Pull relevant pages.
@@ -146,7 +146,7 @@ User asks something → run `/wiki-query`:
 
 ### Update
 
-A fact changes → run `/wiki-update <page>`:
+A fact changes → run `/scribe-update <page>`:
 
 1. Edit the page in place.
 2. Append `## History` entry.
@@ -155,7 +155,7 @@ A fact changes → run `/wiki-update <page>`:
 
 ### Lint
 
-Periodically → run `/wiki-lint`:
+Periodically → run `/scribe-lint`:
 
 - Orphan pages (no inbound links).
 - Concepts mentioned in 3+ pages without their own page.
@@ -193,7 +193,7 @@ Catalog of every page. See [[WIKI]] for schema, [[log]] for history.
 
 ## People
 
-(empty — add via /wiki-ingest)
+(empty — add via /scribe-ingest)
 
 ## Domains
 
@@ -259,9 +259,9 @@ If `MEMORY.md` doesn't exist for the current project, create it with that one li
 Single-paragraph confirmation: vault path, count of files written, where to start (`open <vault_root>/index.md` in Obsidian). Hand them three example next-step commands they can copy:
 
 ```
-/wiki-ingest <url-or-path>     # add a source
-/wiki-query <question>         # ask the wiki
-/wiki-lint                     # health check
+/scribe-ingest <url-or-path>     # add a source
+/scribe-query <question>         # ask the wiki
+/scribe-lint                     # health check
 ```
 
 ## Anti-patterns

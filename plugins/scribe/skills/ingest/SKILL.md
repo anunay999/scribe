@@ -1,15 +1,15 @@
 ---
-name: wiki-ingest
-description: Use when the user shares a source (URL, gist, file path, paste, screenshot) they want indexed into the wiki. Reads the source, files it under sources/, updates or creates affected wiki pages with cross-links, and appends a log entry. Required before ingesting: WIKI.md must exist (run /wiki-bootstrap first).
+name: ingest
+description: Use when the user shares a source (URL, gist, file path, paste, screenshot) they want indexed into the wiki. Reads the source, files it under sources/, updates or creates affected wiki pages with cross-links, and appends a log entry. Required before ingesting: WIKI.md must exist (run /scribe-bootstrap first).
 ---
 
-# wiki-ingest
+# ingest
 
 > One source can touch 10–15 wiki pages. That's the point.
 
 ## Preconditions
 
-1. `WIKI.md` exists in the vault. If not: tell the user to run `/wiki-bootstrap` first; don't auto-bootstrap from inside ingest.
+1. `WIKI.md` exists in the vault. If not: tell the user to run `/scribe-bootstrap` first; don't auto-bootstrap from inside ingest.
 2. The source is identifiable: URL, file path, or pasted text. If none of those: ask "what should I ingest?" and stop.
 
 ## Process
@@ -21,7 +21,7 @@ description: Use when the user shares a source (URL, gist, file path, paste, scr
 - Paste: trust the user's text.
 
 Slug rule: `<short-kebab-case-title>`. Strip dates, source domain, "the", "a". Examples:
-- "How LLMs build wikis — Karpathy" → `karpathy-llm-wiki`
+- "How LLMs build wikis — Karpathy" → `karpathy-scribe`
 - "PR #7116 chain resolution" → `pr-7116-chain-resolution`
 
 If the source has a date the user wants tracked, prefix the slug: `2026-04-25-team-meeting`.

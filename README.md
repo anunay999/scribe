@@ -1,8 +1,10 @@
-# llm-wiki
+# scribe
+
+> Claude as your scribe — reads what you read, writes it down, keeps it linked, never forgets.
 
 A Claude Code plugin that turns Claude into the maintainer of a persistent, interlinked Obsidian-friendly markdown wiki. Pattern: [Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — three layers (raw sources / wiki / schema), index + log indexing, ingest/query/lint workflows.
 
-> **One-liner.** `/wiki-bootstrap` once. Then drop sources at Claude, ask questions, and the wiki keeps itself current. Cross-references, summaries, contradictions — Claude does the bookkeeping.
+> **One-liner.** `/scribe-bootstrap` once. Then drop sources at Claude, ask questions, and the wiki keeps itself current. Cross-references, summaries, contradictions — Claude does the bookkeeping.
 
 ## What you get
 
@@ -10,35 +12,35 @@ Five slash commands and matching skills:
 
 | Command | Skill | What it does |
 |---|---|---|
-| `/wiki-bootstrap` | `llm-wiki:wiki-bootstrap` | One-time setup: creates the vault under `~/Documents/obsidian/<vault>/`, writes `WIKI.md` (schema), `index.md`, `log.md`, and seeds folders. |
-| `/wiki-ingest <source>` | `llm-wiki:wiki-ingest` | Reads a URL/file/paste, summarizes, files raw under `sources/`, updates affected pages, appends to log. |
-| `/wiki-query <question>` | `llm-wiki:wiki-query` | Answers from the wiki with citations; files good answers back as new pages. |
-| `/wiki-lint` | `llm-wiki:wiki-lint` | Health check: orphan pages, contradictions, stale claims, missing cross-refs, suggestions for new pages. |
-| `/wiki-update <page>` | `llm-wiki:wiki-update` | Edit a page in place + propagate the change to linked pages + append to log. |
+| `/scribe-bootstrap` | `scribe:bootstrap` | One-time setup: creates the vault under `~/Documents/obsidian/<vault>/`, writes `WIKI.md` (schema), `index.md`, `log.md`, and seeds folders. |
+| `/scribe-ingest <source>` | `scribe:ingest` | Reads a URL/file/paste, summarizes, files raw under `sources/`, updates affected pages, appends to log. |
+| `/scribe-query <question>` | `scribe:query` | Answers from the wiki with citations; files good answers back as new pages. |
+| `/scribe-lint` | `scribe:lint` | Health check: orphan pages, contradictions, stale claims, missing cross-refs, suggestions for new pages. |
+| `/scribe-update <page>` | `scribe:update` | Edit a page in place + propagate the change to linked pages + append to log. |
 
 ## Install
 
 ### From the marketplace
 
 ```bash
-/marketplace add anunay-aatipamula/llm-wiki-claude
-/install llm-wiki@llm-wiki-claude
+/marketplace add anunay999/scribe
+/install scribe@scribe
 ```
 
-(Replace `anunay-aatipamula` with the GitHub org/user you publish under.)
+(Replace `anunay999` with the GitHub org/user you publish under.)
 
 ### Local install (development)
 
 ```bash
-git clone https://github.com/<you>/llm-wiki-claude ~/dev/llm-wiki-claude
-/marketplace add ~/dev/llm-wiki-claude
-/install llm-wiki@llm-wiki-claude
+git clone https://github.com/<you>/scribe ~/dev/scribe
+/marketplace add ~/dev/scribe
+/install scribe@scribe
 ```
 
 ## Quick start
 
 ```text
-/wiki-bootstrap
+/scribe-bootstrap
    → asks for vault root (default ~/Documents/obsidian/claude/)
    → asks 2-3 questions about what you want the wiki to be (research, work, personal)
    → seeds WIKI.md / index.md / log.md / folders
@@ -85,7 +87,7 @@ This plugin's wiki coexists with Claude Code's built-in auto-memory (`~/.claude/
 - **Auto-memory** — small, preloaded into every session, hard rules and pointers.
 - **Wiki** — large, on-demand, deeply linked, queried when topic-relevant.
 
-`/wiki-bootstrap` adds a memory pointer so Claude knows the wiki exists in future sessions.
+`/scribe-bootstrap` adds a memory pointer so Claude knows the wiki exists in future sessions.
 
 ## License
 

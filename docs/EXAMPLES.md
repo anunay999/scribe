@@ -7,7 +7,7 @@ End-to-end transcripts of the five workflows.
 ## Bootstrap
 
 ```text
-> /wiki-bootstrap
+> /scribe-bootstrap
 
 Claude: I'll set up your vault. Three quick questions:
   1. Vault root? (default: ~/Documents/obsidian/claude/)
@@ -29,9 +29,9 @@ data pipelines, frontend, infra.
 
 Open ~/Documents/obsidian/claude/index.md in Obsidian to see the graph.
 Try next:
-  /wiki-ingest <url>           # add a source
-  /wiki-query <question>       # ask the wiki
-  /wiki-lint                   # health check
+  /scribe-ingest <url>           # add a source
+  /scribe-query <question>       # ask the wiki
+  /scribe-lint                   # health check
 ```
 
 ---
@@ -39,10 +39,10 @@ Try next:
 ## Ingest a gist
 
 ```text
-> /wiki-ingest https://gist.githubusercontent.com/karpathy/.../llm-wiki.md
+> /scribe-ingest https://gist.githubusercontent.com/karpathy/.../scribe.md
 
 Claude: Reading the source…
-  ✓ Wrote sources/karpathy-llm-wiki.md (TL;DR + key takeaways + quotes)
+  ✓ Wrote sources/karpathy-scribe.md (TL;DR + key takeaways + quotes)
   ✓ Created patterns/memory-system.md (how the wiki coexists with auto-memory)
   ✓ Created patterns/wiki-workflow.md (ingest/query/lint flow)
   ✓ Updated index.md (added Sources + Patterns sections)
@@ -60,7 +60,7 @@ work-default folders?
 ## Query
 
 ```text
-> /wiki-query how does our sync layer handle retries?
+> /scribe-query how does our sync layer handle retries?
 
 Claude: Reads index.md, then domains/meteor.md, projects/entity-scoped-sync.md,
 references/sync-tuning.md.
@@ -90,7 +90,7 @@ and was a fact lookup. Let me know if you want it filed for next time.
 ## Update
 
 ```text
-> /wiki-update mark project chain-resolution as done — PR #7116 just merged.
+> /scribe-update mark project chain-resolution as done — PR #7116 just merged.
 
 Claude:
   ✓ Edited projects/chain-resolution.md
@@ -113,7 +113,7 @@ chain-resolution" — should I move that to a "Recently shipped" section?
 ## Lint
 
 ```text
-> /wiki-lint
+> /scribe-lint
 
 Claude: Health check — 2026-05-01
 
@@ -148,6 +148,6 @@ Want me to apply any of these? Reply with section names or `all`.
 
 > orphans, missing cross-references.
 
-Claude: Applied 5 fixes. Ran /wiki-update on each affected page,
+Claude: Applied 5 fixes. Ran /scribe-update on each affected page,
 appended History entries, logged.
 ```
