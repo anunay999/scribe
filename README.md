@@ -97,4 +97,4 @@ MIT. See [LICENSE](LICENSE).
 
 - Pattern: [Andrej Karpathy's LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f).
 - Skill structure inspired by Anthropic's [superpowers](https://github.com/anthropics/claude-plugins-official) plugin layout.
-- Author: Anunay (anunay@withorbital.com).
+- Author: Anunay (mail@anunay.dev).

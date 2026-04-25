@@ -3,7 +3,7 @@
   "name": "scribe",
   "owner": {
     "name": "Anunay",
-    "email": "anunay@withorbital.com",
+    "email": "mail@anunay.dev",
     "url": "https://github.com/anunay999"
   },
   "description": "Claude as your scribe — reads what you read, writes it down, keeps it linked, never forgets. Persistent, interlinked Obsidian markdown wiki maintained by Claude. Implementation of Karpathy's LLM Wiki pattern as Claude Code skills + commands.",
