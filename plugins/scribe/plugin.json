@@ -3,7 +3,11 @@
   "name": "scribe",
   "version": "0.1.0",
   "description": "Persistent, interlinked Obsidian-friendly markdown wiki maintained by Claude. Pattern: Karpathy's LLM Wiki.",
-  "author": "Anunay <anunay@withorbital.com>",
+  "author": {
+    "name": "Anunay",
+    "email": "anunay@withorbital.com",
+    "url": "https://github.com/anunay999"
+  },
   "license": "MIT",
   "homepage": "https://github.com/anunay999/scribe",
   "keywords": ["wiki", "obsidian", "knowledge-base", "memory", "personal-knowledge-management"]
