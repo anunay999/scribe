@@ -254,6 +254,26 @@ So future Claude sessions discover the wiki even on fresh contexts:
 
 If `MEMORY.md` doesn't exist for the current project, create it with that one line plus a short header. Don't overwrite existing memory.
 
+Also append a rule block to `MEMORY.md` (under a `## Conventions` heading, creating it if absent) so future sessions know the two systems are bidirectional **and which scribe command to run for which trigger**:
+
+```
+### Scribe ↔ memory contract
+
+Memory holds one-line pointers and rules. Scribe holds the cross-linked body.
+
+When something interesting/important happens, pick the right scribe command:
+
+| Trigger | Scribe command | Memory action |
+|---|---|---|
+| User shared a URL / file / paste to index | /scribe-ingest <source> | Add reference_*.md pointer if canonical |
+| User decided / shipped / set a convention in conversation | /scribe-capture | Add project_*.md or feedback_*.md pointer |
+| A specific fact in an existing page changed | /scribe-update <page or fact> | Update matching pointer if identity/status changed |
+| "What do we know about X?" with non-trivial answer | /scribe-query <question> | No memory change unless durable fact surfaced |
+| Periodic hygiene | /scribe-lint | No memory change |
+
+After writing a memory entry for a notable fact, run the matching scribe command above. After scribe lands something durable, propose a one-line memory pointer back. Skip both for trivial lookups or ephemeral state.
+```
+
 ### Step 6 — confirm to the user
 
 Single-paragraph confirmation: vault path, count of files written, where to start (`open <vault_root>/index.md` in Obsidian). Hand them three example next-step commands they can copy:

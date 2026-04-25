@@ -80,6 +80,18 @@ Brief end-of-turn:
 - List of pages touched.
 - Anything you noticed but didn't change (offer follow-up).
 
+## Also update auto-memory when the change is durable
+
+If the update reflects a **decision, naming change, deprecation, new convention, or other fact** that future sessions need to know upfront, also update auto-memory at `~/.claude/projects/<project>/memory/`:
+
+- New durable rule the user stated → add or update `feedback_<slug>.md`.
+- Project status flip (active → done, deprecated, replaced) → update the matching `project_*.md` pointer.
+- External system moved or renamed → update the `reference_*.md` pointer.
+
+Memory entries stay one-liners that point at the wiki page. Don't migrate scribe content into memory.
+
+Skip memory for routine fact corrections — those live in scribe alone.
+
 ## Anti-patterns
 
 - **Don't** rewrite the whole page when a 1-line edit suffices. Edit in place.

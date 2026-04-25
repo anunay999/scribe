@@ -102,6 +102,26 @@ End-of-turn:
 - One sentence: how many items landed where.
 - One question if anything was ambiguous.
 
+## Also update auto-memory
+
+Scribe and Claude Code's auto-memory (`~/.claude/projects/<project>/memory/`) are complementary:
+
+- **Auto-memory** = small, preloaded into every session. Hard rules, user preferences, pointers to where things live.
+- **Scribe wiki** = large, on-demand, deeply linked. The body of knowledge.
+
+When `capture` saves something **interesting and important**, also propose adding a one-line auto-memory pointer:
+
+| What was captured | Memory file to add |
+|---|---|
+| New feature, app, or service the user is building or shipped | `project_<slug>.md` |
+| Specific decision with durable consequences (architecture, naming, deprecation) | `project_<slug>.md` or `feedback_<slug>.md` |
+| New convention or rule the user stated | `feedback_<slug>.md` |
+| New external system, vault, or canonical reference path | `reference_<slug>.md` |
+
+Memory entries are one-liners pointing at the wiki (`See [[wiki-page]] for details`). The body lives in scribe.
+
+Skip memory for ordinary facts, gotchas, code paths — those belong in scribe alone. Bar: "would a future session need to know this exists before it asks?"
+
 ## Anti-patterns
 
 - **Don't** save everything — that's how wikis get noisy and lose signal.

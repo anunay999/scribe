@@ -100,6 +100,18 @@ End-of-turn message to the user:
 - 1–3 bullets of what changed in the wiki.
 - One question that the source raised but didn't answer (drives the next ingest).
 
+## Also update auto-memory when warranted
+
+If the ingested source introduces a **new feature, app, service, or durable decision** that future sessions should know about before they ask, also add a one-line auto-memory pointer at `~/.claude/projects/<project>/memory/`:
+
+- `project_<slug>.md` for new features/apps/services — points at the wiki page.
+- `feedback_<slug>.md` for stated rules or conventions.
+- `reference_<slug>.md` for new external systems, vaults, or paths.
+
+Memory entries are one-liners that point at the wiki (`See [[wiki-page]] for details`) — content lives in scribe, not memory. Bar: "would a future session need to know this exists before asking?"
+
+Skip memory for ordinary facts/gotchas/code paths — those belong in scribe alone.
+
 ## Anti-patterns
 
 - **Don't** dump the entire source into the raw page. Quote selectively. The source URL stays linked — readers can follow it.

@@ -9,6 +9,13 @@ All notable changes to scribe.
 - Simplified default story to manual + optional Stop-hook nudge. Scheduled lint configs moved out of the README path into `docs/advanced/scheduling-examples/` for power users. Setting up launchd/cron from scratch was too much friction for most users; the manual `/scribe-lint` workflow covers the same need with zero config.
 - `docs/HOOKS.md` slimmed to Modes A and B only. Mode C (launchd/cron) and Mode D (git-backed vault) are referenced from the advanced directory.
 
+### Added
+
+- Scribe ↔ auto-memory bidirectional contract baked into the skills:
+  - `bootstrap` writes a `## Conventions` block to `MEMORY.md` with a trigger → scribe-command → memory-action table so future sessions know which slash command to run for which kind of capture.
+  - `capture`, `ingest`, and `update` skills each include a section telling Claude when to also add/update an auto-memory pointer, and which `project_*` / `feedback_*` / `reference_*` file to use.
+  - Memory entries stay one-liners that point at the wiki; the body always lives in scribe.
+
 ## [0.1.2] — 2026-04-25
 
 ### Added
