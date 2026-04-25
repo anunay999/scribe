@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/plugin.json",
+  "name": "llm-wiki",
+  "version": "0.1.0",
+  "description": "Persistent, interlinked Obsidian-friendly markdown wiki maintained by Claude. Pattern: Karpathy's LLM Wiki.",
+  "author": "Anunay <anunay@withorbital.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/anunay-aatipamula/llm-wiki-claude",
+  "keywords": ["wiki", "obsidian", "knowledge-base", "memory", "personal-knowledge-management"]
+}

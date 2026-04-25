@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/schemas/marketplace.json",
+  "name": "llm-wiki-claude",
+  "owner": {
+    "name": "Anunay",
+    "email": "anunay@withorbital.com",
+    "url": "https://github.com/anunay-aatipamula"
+  },
+  "description": "Turn Claude into the maintainer of a persistent, interlinked Obsidian-friendly markdown wiki. Implementation of Karpathy's LLM Wiki pattern as Claude Code skills + commands.",
+  "homepage": "https://github.com/anunay-aatipamula/llm-wiki-claude",
+  "license": "MIT",
+  "plugins": [
+    {
+      "name": "llm-wiki",
+      "source": "./plugins/llm-wiki",
+      "description": "Five skills + slash commands for wiki bootstrap, ingest, query, lint, and per-page updates. Default vault at ~/Documents/obsidian/claude/.",
+      "tags": ["knowledge-base", "obsidian", "memory", "rag-alternative", "wiki", "personal-knowledge-management"]
+    }
+  ]
+}
