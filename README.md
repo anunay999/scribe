@@ -8,15 +8,18 @@ A Claude Code plugin that turns Claude into the maintainer of a persistent, inte
 
 ## What you get
 
-Five slash commands and matching skills:
+Six slash commands and matching skills:
 
 | Command | Skill | What it does |
 |---|---|---|
 | `/scribe-bootstrap` | `scribe:bootstrap` | One-time setup: creates the vault under `~/Documents/obsidian/<vault>/`, writes `WIKI.md` (schema), `index.md`, `log.md`, and seeds folders. |
 | `/scribe-ingest <source>` | `scribe:ingest` | Reads a URL/file/paste, summarizes, files raw under `sources/`, updates affected pages, appends to log. |
+| `/scribe-capture` | `scribe:capture` | Scans the *current conversation* for wiki-worthy content (decisions, facts, gotchas, new concepts, sources) and proposes a checklist of what to save. |
 | `/scribe-query <question>` | `scribe:query` | Answers from the wiki with citations; files good answers back as new pages. |
 | `/scribe-lint` | `scribe:lint` | Health check: orphan pages, contradictions, stale claims, missing cross-refs, suggestions for new pages. |
 | `/scribe-update <page>` | `scribe:update` | Edit a page in place + propagate the change to linked pages + append to log. |
+
+For background / scheduled operation see [docs/HOOKS.md](docs/HOOKS.md).
 
 ## Install
 

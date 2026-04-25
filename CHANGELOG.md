@@ -2,6 +2,18 @@
 
 All notable changes to scribe.
 
+## [0.1.1] — 2026-04-25
+
+### Added
+
+- New skill + command: `scribe:capture` / `/scribe-capture` — scans the current conversation for wiki-worthy content (decisions, facts, gotchas, new concepts, sources) and proposes a checklist of what to save.
+- `docs/HOOKS.md` — three modes for keeping the wiki current automatically: manual, end-of-session capture hook, scheduled lint/capture, and optional git-backed auto-commit.
+
+### Fixed
+
+- `plugin.json` author field is now an object (`{name, email, url}`) per the Claude Code plugin schema, fixing the "Validation errors: author: Invalid input: expected object, received string" install error.
+- Author email updated to mail@anunay.dev across plugin.json and marketplace.json.
+
 ## [0.1.0] — 2026-04-25
 
 ### Added
