@@ -2,6 +2,13 @@
 
 All notable changes to scribe.
 
+## [0.1.3] — 2026-04-25
+
+### Changed
+
+- Simplified default story to manual + optional Stop-hook nudge. Scheduled lint configs moved out of the README path into `docs/advanced/scheduling-examples/` for power users. Setting up launchd/cron from scratch was too much friction for most users; the manual `/scribe-lint` workflow covers the same need with zero config.
+- `docs/HOOKS.md` slimmed to Modes A and B only. Mode C (launchd/cron) and Mode D (git-backed vault) are referenced from the advanced directory.
+
 ## [0.1.2] — 2026-04-25
 
 ### Added

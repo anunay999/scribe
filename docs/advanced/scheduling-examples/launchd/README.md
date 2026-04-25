@@ -5,7 +5,7 @@ Runs `/scribe-lint` over your Obsidian vault twice a day (09:00 and 21:00 local)
 ## Install
 
 ```bash
-cd examples/launchd
+cd docs/advanced/scheduling-examples/launchd
 ./install.sh
 ```
 

@@ -19,7 +19,7 @@ Six slash commands and matching skills:
 | `/scribe-lint` | `scribe:lint` | Health check: orphan pages, contradictions, stale claims, missing cross-refs, suggestions for new pages. |
 | `/scribe-update <page>` | `scribe:update` | Edit a page in place + propagate the change to linked pages + append to log. |
 
-For background / scheduled operation see [docs/HOOKS.md](docs/HOOKS.md).
+For an optional end-of-session nudge hook see [docs/HOOKS.md](docs/HOOKS.md). For power-user scheduled lint via launchd/cron see [docs/advanced/scheduling-examples/](docs/advanced/scheduling-examples/).
 
 ## Install
 
